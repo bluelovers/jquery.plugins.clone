@@ -22,7 +22,7 @@
 					success(location.coords);
 				}, function(){
 					error();
-				}, {enableHighAccuracy: options.highAccuracy});		
+				}, {enableHighAccuracy: options.highAccuracy, maximumAge: options.maximumAge});		
 			}else{
 				error();				
 			}
