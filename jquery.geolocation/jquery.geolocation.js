@@ -7,14 +7,14 @@
  */
 
 (function($){
-	
+
 	$.extend($.support,{
 		geolocation:function(){
 			return $.geolocation.support();
 		}
 	});
 
-	$.geolocation = {        
+	$.geolocation = {
 		find:function(success, error, options){
 			if($.geolocation.support()){
 				options = $.extend({highAccuracy: false, track: false, maximumAge: 60}, options);
@@ -22,9 +22,9 @@
 					success(location.coords);
 				}, function(){
 					error();
-				}, {enableHighAccuracy: options.highAccuracy, maximumAge: options.maximumAge});		
+				}, {enableHighAccuracy: options.highAccuracy, maximumAge: options.maximumAge});
 			}else{
-				error();				
+				error();
 			}
 		},
 		object:function(){
@@ -34,5 +34,5 @@
 			return ($.geolocation.object()) ? true : false;
 		}
 	}
-	
+
 })(jQuery);
