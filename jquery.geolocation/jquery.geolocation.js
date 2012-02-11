@@ -17,7 +17,7 @@
 	$.geolocation = {        
 		find:function(success, error, options){
 			if($.geolocation.support()){
-				options = $.extend({highAccuracy: false, track: false}, options);
+				options = $.extend({highAccuracy: false, track: false, maximumAge: 60}, options);
 				($.geolocation.object())[(options.track ? 'watchPosition' : 'getCurrentPosition')](function(location){
 					success(location.coords);
 				}, function(){
